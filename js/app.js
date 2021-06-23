@@ -87,6 +87,6 @@ function ListadoProductos(LP_cliente){
 function Menu(m_opcion){
     do{
         m_opcion = prompt('Ingrese una de las siguientes opciones:\n[A] Agregar un producto\n[C] Confirmar Compra\n[S] Salir')
-    }while(m_opcion !='A' && m_opcion !='F' && m_opcion !='C' );
+    }while(m_opcion !='A' && m_opcion !='C' && m_opcion !='S' );
     return m_opcion;
 }
