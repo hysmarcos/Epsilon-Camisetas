@@ -1,92 +1,135 @@
-var cliente = {
-    saldo : prompt('Ingrese su saldo disponible en la tarjeta'),
-    montoTotal : 0,
-}
+/*
+    Proyecto: Sitio Web Ecommerce
+    Nombre: Epsilon Camisetas
+    Descripción: Sitio de venta de productos deportivos.
+*/
 
-var opcion;
 
-opcion = Menu(opcion);
+// Genero una variable de clase Cliente.
+var cliente = new Cliente(3000, 0, '', carrito);
 
+// Evalúa si el monto ingresado es correcto, si es menor o igual a 0.
+do{
+    cliente.saldo = prompt('Ingrese el saldo disponible en la tarjeta');
+}while(parseFloat(cliente.saldo) <= 0 || cliente.saldo == '');
+cliente.saldo = parseFloat(cliente.saldo);
+
+var opcion = Menu(opcion);
+
+// Ciclo que cumple la función de menú del programa principal.
 while(opcion != 'S'){
     if(opcion === 'A'){
         ListadoProductos(cliente);
     }
     else if(opcion === 'C'){
-        FinalizarCompra(cliente, opcion);
+        alert(cliente.mostrarSaldo);
+    }  
+    else if(opcion === 'V'){
+        alert(`El pedido es el siguiente:\n____________________________\n${cliente.pedido.map(item => `${item.nombre} | $${item.precio} | Cantidad: ${item.cantidad}`).join("\n")}\n____________________________\nTotal: $${cliente.montoTotal}`)
+    }            
+    else if(opcion === 'F'){
+        FinalizarCompra(cliente);
     }
+    cliente.pedido.sort(OrdenarPedido);
     opcion = Menu(opcion);
-}
+};
 
-function ConfirmaCompra (FC_opcion){
-    if(parseInt(prompt(`¿Confirma la compra? [S/N]:`)) == 'S'){
-        return FC_opcion = true;
+
+// Función de confirmación de compra, para mostrar un agradecimiento.
+function ConfirmaCompra (CC_cliente){
+    if((prompt(`¿Confirma la compra? [S/N]:`)).toUpperCase() == 'S'){
+        alert(`¡Muchas gracias por su compra!`);
     }
 }
 
-function FinalizarCompra(FC_cliente, FC_opcion){
-    var metodoDePago, confirmaCompra;
+// Esta función cumple el proposito de indicar cuál es el método de pago del cliente, y mostrar en pantalla sus promociones y descuentos (Si los hay).
+function FinalizarCompra(FC_cliente){
+    var FC_confirmaCompra = false;
+    // Evalúo si el cliente posee una compra pendiente, de no ser así (x=0), arroja una notificación, caso contrario indica los métodos de pago.
     if(FC_cliente.montoTotal==0){
         alert(`No ha realizado ninguna compra.`);
     }
     else{
         do{
-            metodoDePago = parseInt(prompt('Ingrese su metodo de pago:\n[1] Efectivo (10% Off)\n[2] Tarjeta VISA\n[3] Tarjeta MasterCard\n[4] Tarjeta American Express (3 Cuotas S/interes)'))
-        }while(metodoDePago != 1 && metodoDePago != 2 && metodoDePago != 3 && metodoDePago != 4);
-        if(metodoDePago === 1){
-            alert (`El monto total a abonar en efectivo es de $${FC_cliente.montoTotal - (FC_cliente.montoTotal*0.10)}`);
-            confirmaCompra = ConfirmaCompra(FC_opcion);
+            FC_cliente.cambiarMetodoDePago = parseInt(prompt('Ingrese su metodo de pago:\n[1] Efectivo (10% Off)\n[2] Tarjeta VISA\n[3] Tarjeta MasterCard\n[4] Tarjeta American Express (3 Cuotas S/interes)'))
+        }while(FC_cliente.metodoDePago != 1 && FC_cliente.metodoDePago != 2 && FC_cliente.metodoDePago != 3 && FC_cliente.metodoDePago != 4);
+        if(FC_cliente.metodoDePago === 1){
+            alert (`El monto total a abonar en efectivo es de $${(FC_cliente.montoTotal - (FC_cliente.montoTotal*0.10)).toFixed(2)}`);
+            ConfirmaCompra(FC_cliente);
         }
-        else if(metodoDePago === 2 || metodoDePago === 3){
-            alert (`El monto total a abonar es de $${FC_cliente.montoTotal}`);
-            confirmaCompra = ConfirmaCompra(FC_opcion);
+        else if(FC_cliente.metodoDePago === 2 || FC_cliente.metodoDePago === 3){
+            alert (`El monto total a abonar es de $${(FC_cliente.montoTotal.toFixed(2))}`);
+            ConfirmaCompra(FC_cliente);
         }
-        else if(metodoDePago === 4){
-            alert (`El monto total a abonar es de $${FC_cliente.montoTotal}, con posibilidad de compra en 3 cuotas de $${FC_cliente.montoTotal/3}`);
-            confirmaCompra = ConfirmaCompra(FC_opcion);
+        else if(FC_cliente.metodoDePago === 4){
+            alert (`El monto total a abonar es de $${FC_cliente.montoTotal}, con posibilidad de compra en 3 cuotas de $${(FC_cliente.montoTotal/3).toFixed(2)}`);
+            ConfirmaCompra(FC_cliente);
         }
         else{
             alert ('El valor ingresado es incorrecto.');
         }
-        if (confirmaCompra == true){
-            alert(`¡Muchas gracias por su compra!`)
-            FC_cliente.saldo = FC_cliente.saldo - FC_cliente.montoTotal;
-        }
     }
 }
 
+// Esta función cumple el proposito de calcular si la cantidad de productos ingresados multiplicado por el monto del producto, no supera el saldo actual del cliente
 function CalculoCantidadProductos(CCP_producto, CCP_cliente){
     let CCP_qProductos;
-    CCP_qProductos = parseInt(prompt(`Ingrese la cantidad a comprar:`));
-    while(CCP_producto*CCP_qProductos>CCP_cliente.saldo){
-        CCP_qProductos = parseInt(prompt(`La cantidad ingresada supera al saldo disponible, ingrese una cantidad menor:`));
+    CCP_qProductos = prompt(`Ingrese la cantidad a comprar:`);
+    while(CCP_producto*parseInt(CCP_qProductos)>CCP_cliente.saldo || CCP_qProductos == ''){
+        CCP_qProductos = prompt(`La cantidad ingresada es incorrecta, verifique el valor ingresado o ingrese 0:`);
     }
+    CCP_qProductos = parseInt(CCP_qProductos);
     CCP_cliente.saldo = CCP_cliente.saldo - CCP_producto*CCP_qProductos;
     CCP_cliente.montoTotal = CCP_cliente.montoTotal + CCP_producto*CCP_qProductos;
-}
+    return CCP_qProductos;
+};
 
+// Esta función cumple el proposito de mostrarle al cliente los productos a elegir
 function ListadoProductos(LP_cliente){
-    let LP_camiseta = 1200, LP_pantalon = 800, LP_buzo = 1800;
-    let LP_producto, monto;
-    LP_producto = parseInt(prompt(`Listado de productos:\n[1] Camiseta de futbol: $${LP_camiseta}\n[2] Pantalon: $${LP_pantalon}\n[3] Buzo Deportivo $${LP_buzo}`));
-    if (LP_producto === 1){
-        monto = CalculoCantidadProductos(LP_camiseta, LP_cliente);
-    }
-    else if(LP_producto === 2){
-        monto = CalculoCantidadProductos(LP_pantalon, LP_cliente);
-    }
-    else if(LP_producto === 3){
-        monto = CalculoCantidadProductos(LP_buzo, LP_cliente);
+    let LP_posicion, LP_productoActual;
+    LP_posicion = parseInt(prompt(`Listado de productos:\n
+    [1] ${baseDeDatosProductos[0].nombre}: $${baseDeDatosProductos[0].precio}
+    [2] ${baseDeDatosProductos[1].nombre}: $${baseDeDatosProductos[1].precio}
+    [3] ${baseDeDatosProductos[2].nombre}: $${baseDeDatosProductos[2].precio}
+    [4] ${baseDeDatosProductos[3].nombre}: $${baseDeDatosProductos[3].precio}
+    [5] ${baseDeDatosProductos[4].nombre}: $${baseDeDatosProductos[4].precio}
+    [6] ${baseDeDatosProductos[5].nombre}: $${baseDeDatosProductos[5].precio}
+    [7] ${baseDeDatosProductos[6].nombre}: $${baseDeDatosProductos[6].precio}
+    `));
+    LP_productoActual = baseDeDatosProductos[LP_posicion-1];
+    if (LP_posicion >= 1 && LP_posicion <=7){
+        LP_productoActual.cantidad =CalculoCantidadProductos(LP_productoActual.precio, LP_cliente);
+        if(LP_productoActual.cantidad > 0){
+            do{
+                LP_productoActual.talle = prompt(`Ingrese el talle para ${LP_productoActual.nombre}.\n[S/M/L/XL]`);
+                LP_productoActual.talle = LP_productoActual.talle.toUpperCase();
+            }while(LP_productoActual.talle != 'S' && LP_productoActual.talle != 'M' && LP_productoActual.talle != 'L' && LP_productoActual.talle != 'XL');
+            LP_cliente.pedido.push(LP_productoActual);
+        }
     }
     else{
         alert('El producto ingresado no existe.');
-        monto = 0;
     }
-    alert(`El monto total es de $${LP_cliente.montoTotal}, y su saldo restante es de $${LP_cliente.saldo}`);
-}
+    alert(LP_cliente.mostrarSaldo);
+};
 
-function Menu(m_opcion){
+// Funcion para ordenar el pedido del cliente (Ejercicio num6 complementario)
+function OrdenarPedido(a, b){
+    if ( a.nombre < b.nombre ){
+        return -1;
+      }
+      if ( a.nombre > b.nombre ){
+        return 1;
+      }
+      return 0;    
+};
+
+// Menu del sitio
+function Menu(){
+    let m_opcion;
     do{
-        m_opcion = prompt('Ingrese una de las siguientes opciones:\n[A] Agregar un producto\n[C] Confirmar Compra\n[S] Salir')
-    }while(m_opcion !='A' && m_opcion !='C' && m_opcion !='S' );
+        m_opcion = prompt('Ingrese una de las siguientes opciones:\n[A] Agregar un producto\n[C] Consultar Saldo Disponible\n[V] Ver Carrito\n[F] Finalizar Compra\n[S] Salir')
+        m_opcion = m_opcion.toUpperCase();
+    }while((m_opcion !='A' && m_opcion !='C' && m_opcion !='V'  && m_opcion !='F' && m_opcion !='S') || m_opcion =='');
     return m_opcion;
-}
+};
