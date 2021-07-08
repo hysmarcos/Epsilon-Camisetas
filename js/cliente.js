@@ -1,14 +1,24 @@
 class Cliente{
-    constructor(saldo, montoTotal, metodoDePago, pedido){
+    constructor(nombre, saldo, montoTotal, metodoDePago, pedido){
+        this.nombre = nombre;
         this.saldo = saldo;
         this.montoTotal = montoTotal;
         this.metodoDePago = metodoDePago;
         this.pedido = pedido;
     };
+    get mostrarNombre(){
+        return this.nombre;
+        }
     get mostrarSaldo(){
-        return (`El monto total es de $${this.montoTotal}, y su saldo restante es de $${this.saldo}.`)
+        return this.saldo;
+    }
+    get mostrarMontoTotal(){
+        return this.montoTotal;
     }
     set cambiarMetodoDePago(metodoDePago){
         this.metodoDePago = metodoDePago;
+    }
+    get mostrarMetodoDePago(){
+        return this.metodoDePago;
     }
 }
