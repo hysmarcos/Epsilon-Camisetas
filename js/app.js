@@ -11,7 +11,8 @@ var cliente = new Cliente('', 3000, 0, '', carrito);
 var listadoCompra;
 // Genero variables para los distintos IDs de HTML
 var idSaldo = document.getElementById('balance');
-var idNombre = document.getElementById('name');
+var idNombreNav = document.getElementById('name-nav');
+var idNombreMain = document.getElementById('name-main');
 var idMetodoDePago = document.getElementById('paymentMethod');
 var idMontoTotal = document.getElementById('totalAmount');
 var idCarrito = document.getElementById('productList');
@@ -52,7 +53,8 @@ function ConfirmaCompra (CC_cliente){
     if((prompt(`¿Confirma la compra? [S/N]:`)).toUpperCase() == 'S'){
         alert(`¡Muchas gracias por su compra!`);
         // Muestro el nombre del cliente
-        idNombre.innerHTML = (`¡Hola ${cliente.mostrarNombre}!`);
+        idNombreNav.innerHTML = (`¡Hola ${cliente.mostrarNombre}!`);
+        idNombreMain.innerHTML = (`¡Hola ${cliente.mostrarNombre}!`);
         // Listado de productos
         idCarrito.innerHTML = ('<ul>');
         idCarrito.innerHTML += (` ${cliente.pedido.map(item => `<li>${item.nombre} | ${item.talle} | ${item.cantidad} | $${item.precio}</li>`).join('\n')}`)
