@@ -8,19 +8,22 @@
 	<!-- Styles CSS-->
 	<link rel="stylesheet" href="./css/styles.css">
 	<!-- Bootstrap CSS -->
-	<link href="./css/bootstrap.min.css" rel="stylesheet"
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<!-- Title -->
-	<title>Epsilon Camisetas</title>
+	<title>Epsilon Deportes - Venta de Ropa y Accesorios Deportivos</title>
+	<link rel="icon" href="./assets/logo.png" type="image/icon type">
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-		<div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
+	<nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-background">
+		<div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0 social-icons">
+			<a href=""><img src="./assets/whatsapp.svg" alt=""></a>
+			<a href=""><img src="./assets/instagram.svg" alt=""></a>
 		</div>
 		<div class="mx-auto my-2 order-0 order-md-1 position-relative">
 			<a class="mx-auto" href="#">
-				<img src="./assets/logo.png" height="90px">
+				<img src="./assets/logo.png" height="80px">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
 				<span class="navbar-toggler-icon"></span>
@@ -35,12 +38,12 @@
 					<a class="nav-link" href="./js/app.js">Tienda</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" id="name-nav" href="#">Iniciar Sesión</a>
+					<a class="nav-link" id="name-nav" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Iniciar Sesión</a>
 				</li>
 				<li class="nav-item">
 					<a href="#">
-						<img id="cart-empty" class="mt-2" src="./assets/icons8-shopping-cart-48.png" height="24px" alt="carrito"
-							srcset="">
+						<img id="cart-empty" class="mt-2" src="./assets/icons8-shopping-cart-48.png" height="24px"
+							alt="carrito" srcset="">
 					</a>
 				</li>
 				<li class="nav-item">
@@ -49,28 +52,193 @@
 			</ul>
 		</div>
 	</nav>
-	<main class="container-fluid">
+	<!-- Productos -->
+	<main class="container-fluid mb-4">
+		<!-- Imagen Principal -->
+		<img class="hero" src="./assets/hero-image.jpg" alt="Hero Image" srcset="">
+		<!-- Categorías -->
+		<div class="grid">
+			<!-- Categoría 1 -->
+			<div class="grid__categories">
+				<a href="#">
+					VER CAMISETAS
+					<img src="./assets/arrow-link.png" alt="">
+				</a>
+			</div>
+			<!-- Categoría 2 -->
+			<div class="grid__categories">
+				<a href="#">
+					VER BUZOS Y CAMPERAS
+					<img src="./assets/arrow-link.png" alt="">
+				</a>
+			</div>
+		</div>
+		<div class="grid">
+			<!-- Camisetas -->
+			<div class="grid__container">
+				<div class="grid__container__producto">
+					<div class="grid__container__producto__image">
+						<img src="./assets/products/camiseta-psg-suplente.png" alt="">
+						<div class="middle">
+							<div class="grid__container__producto__image__button">Agregar al Carrito</div>
+						</div>
+					</div>
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<a href="" class="btn-add">
+							<span class="grid__container__producto__image__button-show">Camiseta PSG <br> $1200</span>
+							<span class="grid__container__producto__image__button-hover">Agregar al Carrito</span>
+						</a>
+					</div>
+				</div>
+				<div class="grid__container__producto">
+					<div class="grid__container__producto__image">
+						<img src="./assets/products/camiseta-argentina-titular.png" alt="">
+						<div class="middle">
+							<div class="grid__container__producto__image__button">Agregar al Carrito</div>
+						</div>
+					</div>
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<a href="" class="btn-add">
+							<span class="grid__container__producto__image__button-show">Camiseta PSG <br> $1200</span>
+							<span class="grid__container__producto__image__button-hover">Agregar al Carrito</span>
+						</a>
+					</div>
+				</div>				<div class="grid__container__producto">
+					<div class="grid__container__producto__image">
+						<img src="./assets/products/camiseta-bayer-munich-titular.png" alt="">
+						<div class="middle">
+							<div class="grid__container__producto__image__button">Agregar al Carrito</div>
+						</div>
+					</div>
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<a href="" class="btn-add">
+							<span class="grid__container__producto__image__button-show">Camiseta PSG <br> $1200</span>
+							<span class="grid__container__producto__image__button-hover">Agregar al Carrito</span>
+						</a>
+					</div>
+				</div>
+				<div class="grid__container__producto">
+					<div class="grid__container__producto__image">
+						<img src="./assets/products/camiseta-river-plate-suplente.png" alt="">
+						<div class="middle">
+							<div class="grid__container__producto__image__button">Agregar al Carrito</div>
+						</div>
+					</div>
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<a href="" class="btn-add">
+							<span class="grid__container__producto__image__button-show">Camiseta PSG <br> $1200</span>
+							<span class="grid__container__producto__image__button-hover">Agregar al Carrito</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- Otros -->
+			<div class="grid__container">
+				<div class="grid__container__producto">
+					<div class="grid__container__producto__image">
+						<img src="./assets/products/buzo-boca-juniors-blanco.png" alt="">
+						<div class="middle">
+							<div class="grid__container__producto__image__button">Agregar al Carrito</div>
+						</div>
+					</div>
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<a href="" class="btn-add">
+							<span class="grid__container__producto__image__button-show">Camiseta PSG <br> $1200</span>
+							<span class="grid__container__producto__image__button-hover">Agregar al Carrito</span>
+						</a>
+					</div>
+				</div>				<div class="grid__container__producto">
+					<div class="grid__container__producto__image">
+						<img src="./assets/products/campera-argentina.png" alt="">
+						<div class="middle">
+							<div class="grid__container__producto__image__button">Agregar al Carrito</div>
+						</div>
+					</div>
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<a href="" class="btn-add">
+							<span class="grid__container__producto__image__button-show">Camiseta PSG <br> $1200</span>
+							<span class="grid__container__producto__image__button-hover">Agregar al Carrito</span>
+						</a>
+					</div>
+				</div>				<div class="grid__container__producto">
+					<div class="grid__container__producto__image">
+						<img src="./assets/products/campera-psg.png" alt="">
+						<div class="middle">
+							<div class="grid__container__producto__image__button">Agregar al Carrito</div>
+						</div>
+					</div>
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<a href="" class="btn-add">
+							<span class="grid__container__producto__image__button-show">Camiseta PSG <br> $1200</span>
+							<span class="grid__container__producto__image__button-hover">Agregar al Carrito</span>
+						</a>
+					</div>
+				</div>				<div class="grid__container__producto">
+					<div class="grid__container__producto__image">
+						<img src="./assets/products/camiseta-red-bull.png" alt="">
+						<div class="middle">
+							<div class="grid__container__producto__image__button">Agregar al Carrito</div>
+						</div>
+					</div>
+					<div class="d-grid gap-2 col-6 mx-auto">
+						<a href="" class="btn-add">
+							<span class="grid__container__producto__image__button-show">Camiseta PSG <br> $1200</span>
+							<span class="grid__container__producto__image__button-hover">Agregar al Carrito</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Resume -->
 		<div class="container__morphism container__morphism--style">
 			<span id="name-main" class="container__morphism__span--style">¡Hola!</span>
 			<p class="container__morphism__p--style">Su pedido:</p>
-			<p class="container__morphism__p--style">Producto  |  Talle  |  Cantidad  |  Precio</p>
-			<div id="productList" class="container__morphism__ul--style"> 
+			<p class="container__morphism__p--style">Producto | Talle | Cantidad | Precio</p>
+			<div id="productList" class="container__morphism__ul--style">
 			</div>
-			<p id="balance" class="container__morphism__p--style">Subtotal $ -</p>
-			<p id="totalAmount" class="container__morphism__p--style">Total $ -</p>
+			<p id="balance" class="container__morphism__p--style">
+				Subtotal $ -
+			</p>
+			<p id="totalAmount" class="container__morphism__p--style">
+				Total $ -
+			</p>
 		</div>
 	</main>
-	<div id="saldo"></div>
-	<div id="montoTotal"></div>
-	</section>
+	<!-- Scripts JS -->
 	<script src="./js/carrito.js"></script>
 	<script src="./js/cliente.js"></script>
 	<script src="./js/productos.js"></script>
-	<script src="./js/app.js"></script>
+	<!-- <script src="./js/app.js"></script> -->
 
+	<!-- Modal Login -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Inicie sesión</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<span>Correo</span><br>
+					<input type="email" name="" id="" placeholder="Ingrese su correo...">
+					<br><br>
+					<span>Contraseña</span><br>
+					<input type="password" name="" id="">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-success">Iniciar Sesión</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Bootstrap Bundle with Popper -->
-	<script src="./js/bootstrap.bundle.min.js"
-		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
 	</script>
 </body>
 
