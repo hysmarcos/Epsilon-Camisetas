@@ -160,7 +160,7 @@ main div {
     margin-right: auto;
     background-color: rgba(248, 248, 248, 0.075);
     border-radius: 0.5em;
-    height: 17em;
+    height: 16em;
     padding: .5em;
 }
 
@@ -197,27 +197,68 @@ main div {
     transition: .5s all;
 }
 
-.grid__container__producto__image__button {
+.grid__container__producto__image__button{
     background-color: rgb(0, 230, 118);
     color: white;
-    font-size: 16px;
+
+    font-size: .7em;
+    color: rgb(26, 26, 26);
     padding: 12px 32px;
     border-radius: .5em;
     text-align: center;
 }
 
-.btn-add{
-    background-color: rgb(0, 230, 118);
-    color: white;
+.grid-button{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 0 3em;
+}
+
+.btn-add-quantity{
+    background-color: rgb(255, 255, 255);
     display: inline-block;
     text-decoration: none;
-    padding: .5rem 1.75rem;
+    padding: -1.2em 0em 0em 0em;
     border-radius: .5em;
-    width: 17em;
+    color: rgb(104, 104, 104);
     height: 3.8em;
     text-align: center;
     align-items: center;
     vertical-align: middle;
+    cursor: pointer;
+}
+.btn-add-quantity span{
+    color: rgb(56, 56, 56);
+    font-size: .8em;
+}
+
+.btn-add-quantity select{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+}
+
+.btn-add-quantity select::-ms-expand{
+    display: none;
+}
+
+.btn-add{
+    background-color: rgb(0, 230, 118);
+    display: inline-block;
+    text-decoration: none;
+    padding: .5rem 1.75rem;
+    border-radius: .5em;
+    width: 16em;
+    height: 3.8em;
+    text-align: center;
+    align-items: center;
 }
 
 .btn-add:hover{
@@ -226,6 +267,12 @@ main div {
     color: white;
     line-height: 2.8em;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-add span{
+    color: rgb(43, 43, 43);
+    font-weight: 600;
+    font-size: .8em;
 }
 
 .grid__container__producto__image__button-hover{
@@ -238,4 +285,17 @@ main div {
 
 .btn-add:hover .grid__container__producto__image__button-hover{
     display: inline;
+}
+
+table tbody img{
+    height: 4em;
+}
+
+#warnings p{
+    color: rgb(177, 17, 17);
+}
+
+/* Dispositivos grandes hasta 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
 }
