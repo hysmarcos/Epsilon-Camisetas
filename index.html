@@ -10,7 +10,9 @@
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<!-- Title -->
+	<!-- JQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<!-- Title -->
 	<title>Epsilon Deportes - Venta de Ropa y Accesorios Deportivos</title>
 	<link rel="icon" href="./assets/logo.png" type="image/icon type">
 </head>
@@ -18,10 +20,10 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-background">
 		<div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0 social-icons">
-			<a href=""><img src="./assets/whatsapp.svg" alt=""></a>
-			<a href=""><img src="./assets/instagram.svg" alt=""></a>
+			<a href="https://wa.me/message/GRNMWCMZJITCN1"><img src="./assets/whatsapp.svg" alt=""></a>
+			<a href="https://www.instagram.com/epsilon.camisetas"><img src="./assets/instagram.svg" alt=""></a>
 		</div>
-		<div class="mx-auto my-2 order-0 order-md-1 position-relative">
+		<div class="mx-auto my-2 order-0 order-md-1 position-relative logo">
 			<a class="mx-auto" href="#">
 				<img src="./assets/logo.png" height="80px">
 			</a>
@@ -35,20 +37,20 @@
 					<a class="nav-link" href="#">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./js/app.js">Tienda</a>
+					<a class="nav-link" href="#">Tienda</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" id="name-nav" href="#" data-bs-toggle="modal"
 						data-bs-target="#loginModal">Iniciar Sesión</a>
 				</li>
 				<li class="nav-item">
-					<a href="#productList">
+					<a href="./common/cart.html">
 						<img id="cart-empty" class="mt-2" src="./assets/icons8-shopping-cart-48.png" height="24px"
 							alt="carrito" srcset="">
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" id="qCart" href="#productList">(n)</a>
+					<a class="nav-link" id="qCart" href="./common/cart.html">(n)</a>
 				</li>
 			</ul>
 		</div>
@@ -60,7 +62,7 @@
 		<!-- Categorías -->
 		<div class="grid">
 			<!-- Categoría 1 -->
-			<div class="grid__categories">
+			<div id="categories__camisetas" class="grid__categories">
 				<a href="#">
 					VER CAMISETAS
 					<img src="./assets/arrow-link.png" alt="">
@@ -68,7 +70,7 @@
 			</div>
 			<!-- Categoría 2 -->
 			<div class="grid__categories">
-				<a href="#">
+				<a id="categories__buzos-camperas" href="#">
 					VER BUZOS Y CAMPERAS
 					<img src="./assets/arrow-link.png" alt="">
 				</a>
@@ -76,20 +78,19 @@
 		</div>
 		<div class="grid">
 			<!-- Camisetas -->
-			<div class="grid__container">
+			<div id="grid-camisetas" class="grid__container">
 				<!-- Producto 1 -->
 				<div class="grid__container__producto">
 					<div class="grid__container__producto__image">
 						<img src="./assets/products/camiseta-psg-suplente.png" alt="">
 						<div class="middle">
-							<div class="grid__container__producto__image__button addToCartButton">Agregar al Carrito</div>
+							<div class="grid__container__producto__image__button addToCartButton">Ver Producto</div>
 						</div>
 					</div>
 					<div class="">
-						<a class="btn-add d-grid gap-2 mx-auto" id="btn-add-camiseta-psg">
-							<span class="grid__container__producto__image__button-show">Camiseta PSG Títular<br>
-								$1200</span>
-							<span id="descripcion-producto-1" class="grid__container__producto__image__button-hover addToCartButton">Agregar al Carrito</span>
+						<a class="btn-add-nostock d-grid gap-2 mx-auto" id="btn-add-camiseta-psg">
+							<span class="grid__container__producto__image__button-show">Camiseta PSG Títular<br>Sin Stock</span>
+							<span id="descripcion-producto-1" class="grid__container__producto__image__button-hover addToCartButton">Ver Producto</span>
 						</a>
 					</div>
 				</div>
@@ -98,14 +99,14 @@
 					<div class="grid__container__producto__image">
 						<img src="./assets/products/camiseta-argentina-titular.png" alt="">
 						<div class="middle">
-							<div class="grid__container__producto__image__button addToCartButton">Agregar al Carrito</div>
+							<div class="grid__container__producto__image__button addToCartButton">Ver Producto</div>
 						</div>
 					</div>
 					<div class="">
-						<a class="btn-add d-grid gap-2 mx-auto" id="btn-add-camiseta-bayer-munich">
+						<a href="./common/products/camiseta-argentina.html" class="btn-add d-grid gap-2 mx-auto" id="btn-add-camiseta-bayer-munich">
 							<span class="grid__container__producto__image__button-show">Camiseta
 								Argentina<br>$1200</span>
-							<span id="descripcion-producto-2" class="grid__container__producto__image__button-hover addToCartButton">Agregar al Carrito</span>
+							<span id="descripcion-producto-2" class="grid__container__producto__image__button-hover addToCartButton">Ver Producto</span>
 						</a>
 					</div>
 				</div>
@@ -114,14 +115,14 @@
 					<div class="grid__container__producto__image">
 						<img src="./assets/products/camiseta-bayer-munich-titular.png" alt="">
 						<div class="middle">
-							<div class="grid__container__producto__image__button addToCartButton">Agregar al Carrito</div>
+							<div class="grid__container__producto__image__button addToCartButton">Ver Producto</div>
 						</div>
 					</div>
 					<div class="">
-						<a class="btn-add d-grid gap-2 mx-auto">
+						<a href="./common/products/camiseta-bayer-munich.html" class="btn-add d-grid gap-2 mx-auto">
 							<span class="grid__container__producto__image__button-show">Camiseta Bayer Munich<br>
 								$1200</span>
-							<span id="descripcion-producto-3" class="grid__container__producto__image__button-hover addToCartButton">Agregar al Carrito</span>
+							<span id="descripcion-producto-3" class="grid__container__producto__image__button-hover addToCartButton">Ver Producto</span>
 						</a>
 					</div>
 				</div>
@@ -130,33 +131,39 @@
 					<div class="grid__container__producto__image">
 						<img src="./assets/products/camiseta-river-plate-suplente.png" alt="">
 						<div class="middle">
-							<div class="grid__container__producto__image__button addToCartButton">Agregar al Carrito</div>
+							<div class="grid__container__producto__image__button addToCartButton">Ver Producto</div>
 						</div>
 					</div>
 					<div class="">
-						<a class="btn-add d-grid gap-2 mx-auto">
+						<a href="./common/products/camiseta-river-plate.html" class="btn-add d-grid gap-2 mx-auto">
 							<span class="grid__container__producto__image__button-show">Camiseta River Plate <br>
 								$1200</span>
-							<span id="descripcion-producto-4" class="grid__container__producto__image__button-hover addToCartButton">Agregar al Carrito</span>
+							<span id="descripcion-producto-4" class="grid__container__producto__image__button-hover addToCartButton">Ver Producto</span>
 						</a>
 					</div>
 				</div>
 			</div>
 			<!-- Otros -->
+			<div id="categories__buzos-camperas2" class="grid__categories">
+				<a href="#">
+					VER BUZOS Y CAMPERAS
+					<img src="./assets/arrow-link.png" alt="">
+				</a>
+			</div>
 			<div class="grid__container">
 				<!-- Producto 1 -->
 				<div class="grid__container__producto">
 					<div class="grid__container__producto__image">
 						<img src="./assets/products/buzo-boca-juniors-blanco.png" alt="">
 						<div class="middle">
-							<div class="grid__container__producto__image__button addToCartButton">Agregar al Carrito</div>
+							<div class="grid__container__producto__image__button addToCartButton">Ver Producto</div>
 						</div>
 					</div>
 					<div class="">
-						<a class="btn-add d-grid gap-2 mx-auto">
+						<a class="btn-add-nostock d-grid gap-2 mx-auto">
 							<span class="grid__container__producto__image__button-show">Buzo Boca Juniors<br>
-								$1800</span>
-							<span id="descripcion-producto-otros-1" class="grid__container__producto__image__button-hover addToCartButton addToCartButton">Agregar al Carrito</span>
+								Sin Stock</span>
+							<span id="descripcion-producto-otros-1" class="grid__container__producto__image__button-hover addToCartButton addToCartButton">Ver Producto</span>
 						</a>
 					</div>
 				</div>
@@ -165,14 +172,14 @@
 					<div class="grid__container__producto__image">
 						<img src="./assets/products/campera-argentina.png" alt="">
 						<div class="middle">
-							<div class="grid__container__producto__image__button addToCartButton">Agregar al Carrito</div>
+							<div class="grid__container__producto__image__button addToCartButton">Ver Producto</div>
 						</div>
 					</div>
 					<div class="">
-						<a class="btn-add d-grid gap-2 mx-auto">
+						<a class="btn-add-nostock d-grid gap-2 mx-auto">
 							<span class="grid__container__producto__image__button-show">Campera Argentina<br>
-								$1700</span>
-							<span id="descripcion-producto-otros-2" class="grid__container__producto__image__button-hover addToCartButton">Agregar al Carrito</span>
+								Sin Stock</span>
+							<span id="descripcion-producto-otros-2" class="grid__container__producto__image__button-hover addToCartButton">Ver Producto</span>
 						</a>
 					</div>
 				</div>
@@ -181,13 +188,13 @@
 					<div class="grid__container__producto__image">
 						<img src="./assets/products/campera-psg.png" alt="">
 						<div class="middle">
-							<div class="grid__container__producto__image__button addToCartButton">Agregar al Carrito</div>
+							<div class="grid__container__producto__image__button addToCartButton">Ver Producto</div>
 						</div>
 					</div>
 					<div class="">
-						<a class="btn-add d-grid gap-2 mx-auto">
-							<span class="grid__container__producto__image__button-show">Campera PSG<br> $1700</span>
-							<span id="descripcion-producto-otros-3" class="grid__container__producto__image__button-hover addToCartButton">Agregar al Carrito</span>
+						<a href="#" class="btn-add-nostock d-grid gap-2 mx-auto">
+							<span class="grid__container__producto__image__button-show">Campera PSG<br>Sin Stock</span>
+							<span id="descripcion-producto-otros-3" class="grid__container__producto__image__button-hover addToCartButton">Ver Producto</span>
 						</a>
 					</div>
 				</div>
@@ -196,69 +203,18 @@
 					<div class="grid__container__producto__image">
 						<img src="./assets/products/camiseta-red-bull.png" alt="">
 						<div class="middle">
-							<div class="grid__container__producto__image__button addToCartButton">Agregar al Carrito</div>
+							<div class="grid__container__producto__image__button addToCartButton">Ver Producto</div>
 						</div>
 					</div>
-					<div>
-						<a id="" class="btn-add d-grid gap-2 mx-auto">
-							<span class="grid__container__producto__image__button-show">Camiseta Red Bull<br>
-								$1200</span>
-							<span id="descripcion-producto-otros-4" class="grid__container__producto__image__button-hover addToCartButton">Agregar al Carrito</span>
+					<div class="">
+						<a href="#" class="btn-add-nostock d-grid gap-2 mx-auto">
+							<span class="grid__container__producto__image__button-show">Camiseta Red Bull<br>Sin Stock</span>
+							<span id="descripcion-producto-otros-4" class="grid__container__producto__image__button-hover addToCartButton">Ver Producto</span>
 						</a>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
-
-		<!-- Resume -->
-		<div class="container__morphism container__morphism--style">
-			<span id="name-main" class="container__morphism__span--style">¡Hola!</span>
-			<p class="container__morphism__p--style">Su pedido:</p>
-			<p class="container__morphism__p--style">Producto | Talle | Cantidad | Precio</p>
-			<div id="productList" class="container__morphism__ul--style">
-			</div>
-
-			<table class="table table-light">
-				<thead>
-					<tr>
-						<th scope="col">Foto</th>
-						<th scope="col">Producto</th>
-						<th scope="col">Talle</th>
-						<th scope="col">Monto</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row"><img src="./assets/products/camiseta-boca-juniors-titular.png" alt="" srcset=""></th>
-						<td>Camiseta Boca</td>
-						<td>XL</td>
-						<td>$1200</td>
-					</tr>
-					<tr>
-						<th scope="row"><img src="./assets/products/camiseta-bayer-munich-titular.png" alt="" srcset=""></th>
-						<td>Camiseta Bayer Munich</td>
-						<td>S</td>
-						<td>$1200</td>
-					</tr>
-					<tr>
-						<th scope="row"><img src="./assets/products/campera-psg.png" alt="" srcset=""></th>
-						<td>Campera PSG</td>
-						<td>L</td>
-						<td>$1700</td>
-					</tr>
-				</tbody>
-			</table>
-			<p id="balance" class="container__morphism__p--style">
-				Subtotal $ -
-			</p>
-			<p id="totalAmount" class="container__morphism__p--style">
-				Total $ -
-			</p>
-		</div>
-	</main>
-
 
 	<!-- Modal Login -->
 	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -312,6 +268,7 @@
 	<script src="./js/cliente.js"></script>
 	<script src="./js/productos.js"></script>
 	<script src="./js/registrocliente.js"></script>
+	<script src="./js/muestroProductos.js"></script>
 	<!-- <script src="./js/agregoProductos.js"></script> -->
 	<script src="./js/app.js"></script>
 </body>

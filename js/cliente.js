@@ -44,4 +44,10 @@ class Cliente{
     set registroMetodoDePago(metodoDePago){
         this.metodoDePago = metodoDePago;
     }
+    set AgregoProducto(producto){
+        this.pedido.push()
+    }
+    set guardoPedido(pedido){
+        this.pedido = pedido;
+    }
 }

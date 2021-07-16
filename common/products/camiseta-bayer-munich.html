@@ -6,24 +6,24 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Styles CSS-->
-	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="../../css/styles.css">
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<!-- Title -->
-	<title>Carrito - Epsilon Deportes</title>
-	<link rel="icon" href="../assets/logo.png" type="image/icon type">
+	<title>Camiseta Bayer Munich - Epsilon Deportes</title>
+	<link rel="icon" href="../../assets/logo.png" type="image/icon type">
 </head>
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-background">
 		<div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0 social-icons">
-			<a href="https://wa.me/message/GRNMWCMZJITCN1"><img src="../assets/whatsapp.svg" alt=""></a>
-			<a href="https://www.instagram.com/epsilon.camisetas"><img src="../assets/instagram.svg" alt=""></a>
+			<a href="https://wa.me/message/GRNMWCMZJITCN1"><img src="../../assets/whatsapp.svg" alt=""></a>
+			<a href="https://www.instagram.com/epsilon.camisetas"><img src="../../assets/instagram.svg" alt=""></a>
 		</div>
 		<div class="mx-auto my-2 order-0 order-md-1 position-relative logo">
-			<a class="mx-auto" href="../index.html">
-				<img src="../assets/logo.png" height="80px">
+			<a class="mx-auto" href="../../index.html">
+				<img src="../../assets/logo.png" height="80px">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
 				<span class="navbar-toggler-icon"></span>
@@ -32,71 +32,38 @@
 		<div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
 			<ul class="navbar-nav mr-auto text-center">
 				<li class="nav-item">
-					<a class="nav-link" href="../index.html">Home</a>
+					<a class="nav-link" href="../../index.html">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="../index.html">Tienda</a>
+					<a class="nav-link" href="../../index.html">Tienda</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" id="name-nav" href="#" data-bs-toggle="modal"
 						data-bs-target="#loginModal">Iniciar Sesión</a>
 				</li>
 				<li class="nav-item">
-					<a href="#">
-						<img id="cart-empty" class="mt-2" src="../assets/icons8-shopping-cart-48.png" height="24px"
+					<a href="../cart.html">
+						<img id="cart-empty" class="mt-2" src="../../assets/icons8-shopping-cart-48.png" height="24px"
 							alt="carrito" srcset="">
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" id="qCart" href="#">(n)</a>
+					<a class="nav-link" id="qCart" href="../cart.html">(n)</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
-
-        <!-- Resume -->
-        <div class="container__morphism container__morphism--style">
-            <span id="name-main" class="container__morphism__span--style">¡Hola!</span>
-            <p class="container__morphism__p--style">Su pedido:</p>
-            <p class="container__morphism__p--style">Producto | Talle | Cantidad | Precio</p>
-            <div id="productList" class="container__morphism__ul--style">
-            </div>
-            <table class="table table-responsive">
-                <thead>
-                    <tr>
-                        <th scope="col">Foto</th>
-                        <th scope="col">Producto</th>
-                        <th scope="col">Monto</th>
-                    </tr>
-                </thead>
-                <tbody id="carrito">
-                    <div>
-                        
-                    </div>
-                    <tr>
-                        <th scope="row"><img src="./assets/products/camiseta-boca-juniors-titular.png" alt="" srcset=""></th>
-                        <td>Camiseta Boca</td>
-                        <td>$1200</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="./assets/products/camiseta-bayer-munich-titular.png" alt="" srcset=""></th>
-                        <td>Camiseta Bayer Munich</td>
-                        <td>$1200</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="./assets/products/campera-psg.png" alt="" srcset=""></th>
-                        <td>Campera PSG</td>
-                        <td>$1700</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p id="balance" class="container__morphism__p--style">
-                Subtotal $ -
-            </p>
-            <p id="totalAmount" class="container__morphism__p--style">
-                Total $ -
-            </p>
+    <div class="container container-product grid">
+        <div class="mt-5">
+            <img class="product-image" src="../../assets/products/photos/Bayer-munich.jpg" alt="Hero Image" srcset="">
         </div>
+        <div class="container-product__aside mt-5">
+            <h2 id="productName">Camiseta Bayer Munich 2021 Títular</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident facilis, quaerat iusto magni odit omnis itaque repudiandae perspiciatis tempora fugiat.</p>
+            <button id="btnAddToCart" class="btn-add">Agregar al carrito</button>
+        </div>
+    </div>
+
 
 	<!-- Modal Login -->
 	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -146,12 +113,12 @@
 	<!-- Sweet Alert -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<!-- Scripts JS -->
-	<script src="../js/carrito.js"></script>
-	<script src="../js/cliente.js"></script>
-	<script src="../js/productos.js"></script>
-	<script src="../js/registrocliente.js"></script>
-	<!-- <script src="./js/agregoProductos.js"></script> -->
-	<script src="../js/app.js"></script>
+	<script src="../../js/carrito.js"></script>
+	<script src="../../js/cliente.js"></script>
+	<script src="../../js/productos.js"></script>
+	<script src="../../js/registrocliente.js"></script>
+	<script src="../../js/agregoProductos.js"></script>
+	<script src="../../js/app.js"></script>
 </body>
 
 </html>

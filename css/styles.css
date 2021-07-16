@@ -35,6 +35,12 @@ main div {
     align-items: center;
 }
 
+.logo img:hover{
+    /* transform: rotate(360deg); */
+    transform: scale(1.05);
+    transition: .2s all;
+}
+
 .navbar-nav {
     padding-left: 10px;
 }
@@ -47,8 +53,9 @@ main div {
 }
 
 .social-icons img:hover{
+    transform: rotate(360deg);
     filter: brightness(1);
-    transition: 1s all;
+    transition: .5s all;
 }
 
 .hero {
@@ -145,8 +152,8 @@ main div {
 .grid__container__producto{
     /* background-color: rgba(248, 248, 248, 0.075);
     border-radius: 0.5em; */
-    margin-bottom: 1em;
-    padding: 25px;
+    margin-bottom: 2em;
+    padding: 5px;
 }
 
 .grid__container__producto span{
@@ -159,8 +166,8 @@ main div {
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(248, 248, 248, 0.075);
-    border-radius: 0.5em;
-    height: 16em;
+    border-radius: .5em;
+    height: 14em;
     padding: .5em;
 }
 
@@ -255,7 +262,19 @@ main div {
     text-decoration: none;
     padding: .5rem 1.75rem;
     border-radius: .5em;
-    width: 16em;
+    width: 14em;
+    height: 3.8em;
+    text-align: center;
+    align-items: center;
+}
+
+.btn-add-nostock{
+    background-color: rgb(146, 7, 7);
+    display: inline-block;
+    text-decoration: none;
+    padding: .5rem 1.75rem;
+    border-radius: .5em;
+    width: 14em;
     height: 3.8em;
     text-align: center;
     align-items: center;
@@ -269,8 +288,22 @@ main div {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+/* .btn-add-nostock:hover{
+    background-color: rgb(146, 7, 7);
+    cursor: pointer;
+    color: white;
+    line-height: 2.8em;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+} */
+
 .btn-add span{
     color: rgb(43, 43, 43);
+    font-weight: 600;
+    font-size: .8em;
+}
+
+.btn-add-nostock span{
+    color: rgb(230, 230, 230);
     font-weight: 600;
     font-size: .8em;
 }
@@ -295,7 +328,235 @@ table tbody img{
     color: rgb(177, 17, 17);
 }
 
+.product-image{
+    width: 25vw;
+    border-radius: 1em;
+}
+
+.container-product__aside h2{
+    color: white;
+    font-size: 2.2em;
+    text-align: center;
+}
+
+.container-product__aside p{
+    color: rgb(221, 221, 221);
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.container-product__aside button{
+    color: rgb(0, 0, 0);
+    font-size: .8em;
+    text-align: center;
+}
+
+#categories__buzos-camperas2{
+    display: none;
+}
+
+table{
+    background-color: rgba(150, 150, 150, 0.151);
+    border-radius: .5em .5em 0 0;
+}
+
+table thead tr th, table tbody tr{
+    color: white;
+}
+
 /* Dispositivos grandes hasta 1024px */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+@media only screen  and (max-width: 400px) {
+
+    .grid__container__producto img{
+
+        padding: 0;
+    }
+
+    .grid__container__producto img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgba(248, 248, 248, 0.075);
+        border-radius: .5em;
+        height: 13em;
+        padding: .2em;
+    }
+
+    .btn-add{
+        background-color: rgb(0, 230, 118);
+        display: inline-block;
+        text-decoration: none;
+        padding: .5rem 1.75rem;
+        border-radius: .5em;
+        width: 13em;
+        height: 3.8em;
+        text-align: center;
+        align-items: center;
+    }
+
+    .btn-add-nostock{
+        background-color: rgb(146, 7, 7);
+        display: inline-block;
+        text-decoration: none;
+        padding: .5rem 1.75rem;
+        border-radius: .5em;
+        width: 13em;
+        height: 3.8em;
+        text-align: center;
+        align-items: center;
+    }
+
+    .grid__container {
+        display: grid;
+        grid-template-columns: 100%;
+        margin: 0em 5em;
+    }
+    
+    #categories__camisetas{
+        margin: 3em auto 1em auto;
+    }
+    #categories__buzos-camperas{
+        display: none;
+    }
+    #categories__buzos-camperas2{
+        display: block;
+        margin: 3em auto 1em auto;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media only screen  and (min-width: 400px) and (max-width: 530px) {
+
+    .grid__container__producto img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgba(248, 248, 248, 0.075);
+        border-radius: .5em;
+        height: 10em;
+        padding: .2em;
+    }
+
+    .btn-add{
+        background-color: rgb(0, 230, 118);
+        display: inline-block;
+        text-decoration: none;
+        padding: .5rem 1.75rem;
+        border-radius: .5em;
+        width: 10em;
+        height: 3.8em;
+        text-align: center;
+        align-items: center;
+    }
+
+    .btn-add-nostock{
+        background-color: rgb(146, 7, 7);
+        display: inline-block;
+        text-decoration: none;
+        padding: .5rem 1.75rem;
+        border-radius: .5em;
+        width: 10em;
+        height: 3.8em;
+        text-align: center;
+        align-items: center;
+    }
+
+    .grid__container{
+        margin: 0em 1em
+    }
+    #categories__camisetas{
+        margin: 3em auto 1em auto;
+    }
+    #categories__buzos-camperas{
+        display: none;
+    }
+    #categories__buzos-camperas2{
+        display: block;
+        margin: 3em auto 1em auto;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media only screen and (min-width: 530px) and (max-width: 1000px) {
+
+    .grid__container{
+        margin: 0em 1em
+    }
+    #categories__camisetas{
+        margin: 3em auto 1em auto;
+    }
+    #categories__buzos-camperas{
+        display: none;
+    }
+    #categories__buzos-camperas2{
+        display: block;
+        margin: 3em auto 1em auto;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .product-image{
+        width: 80vh;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1280px) {
+    .grid__container__producto img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgba(248, 248, 248, 0.075);
+        border-radius: .5em;
+        height: 10em;
+        padding: .2em;
+    }
+
+    .btn-add{
+        background-color: rgb(0, 230, 118);
+        display: inline-block;
+        text-decoration: none;
+        padding: .5rem 1.75rem;
+        border-radius: .5em;
+        width: 10em;
+        height: 3.8em;
+        text-align: center;
+        align-items: center;
+    }
+
+    .btn-add-nostock{
+        background-color: rgb(146, 7, 7);
+        display: inline-block;
+        text-decoration: none;
+        padding: .5rem 1.75rem;
+        border-radius: .5em;
+        width: 10em;
+        height: 3.8em;
+        text-align: center;
+        align-items: center;
+    }
+
+    .grid__categories{
+        margin-bottom: 2em;
+    }
+}
+
+@media only screen and (min-width: 1280px){
 
 }
