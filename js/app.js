@@ -4,6 +4,13 @@
     Descripción: Sitio de venta de productos deportivos.
 */
 
-$(document).ready(function(){
-    alert("la pagina se cargo JQUERY...");
-});
+// Muestro productos mediante js
+//MuestroProductosHome();
+
+// Registro Usuario, o lo recupero mediante localStorage
+RegistroUsuario();
+
+// 
+CambioEstadoCarrito();
+var productosCatCamisetas = '';
+productosCatCamisetas = MuestroProductosHome();

@@ -1,8 +1,11 @@
-// var listProductsCart = document.getElementById('carrito');
-// var th = document.createElement("th");
-// var td = document.createElement("td");
-// th.appendChild(td)
-// listProductCart.forEach(element => {
-//     carrito.appendChild()
+// let productosCarrito = "";
+
+// productosCarrito += `<tr>`;
+// clientLocalStorage.pedido.forEach( prod => {
+//     productosCarrito +=`
+//     <th scope="row"><img src="${prod.imagen}" alt="${prod.nombre}" srcset=""></th>
+//     <td>${prod.nombre}</td>
+//     <td>${prod.precio}</td>
+// `
 // });
-// var row =  listProductsCart.insertRow();
+// productosCarrito += `</tr>`;

@@ -1,21 +1,22 @@
-// Variables para almacenar el usuario
-const client = new Cliente ('Test', '', '', '', 0, '', carrito);
-const clientName = document.getElementById('client-name');
-const clientSurname = document.getElementById('client-surname');
-const clientEmail = document.getElementById('client-email');
-const clientPassword = document.getElementById('client-password');
-const notification = document.getElementById('warnings');
-const navClientName = document.getElementById('name-nav');
+function RegistroUsuario(){
+    // Variables para almacenar el usuario
+    const client = new Cliente ('Test', '', '', '', 0, '', carrito);
+    const clientName = document.getElementById('client-name');
+    const clientSurname = document.getElementById('client-surname');
+    const clientEmail = document.getElementById('client-email');
+    const clientPassword = document.getElementById('client-password');
+    const notification = document.getElementById('warnings');
+    const navClientName = document.getElementById('name-nav');
 
-// Variables para ejercicio complementario CreateElement
-var makeParagraph = document.createElement('p');
-var alerta = document.createTextNode('Verifique los datos ingresados.');
+    // Variables para ejercicio complementario CreateElement
+    var makeParagraph = document.createElement('p');
+    var alerta = document.createTextNode('Verifique los datos ingresados.');
 
-// Variable para gestionar el localStorage
-let clientLocalStorage;
+    // Variable para gestionar el localStorage
+    let clientLocalStorage;
 
-// Si el item 'usuario' se encuentra almacenado dentro del localStorage, registra al cliente automaticamente al sitio
-if (localStorage.getItem("usuario")){
+    // Si el item 'usuario' se encuentra almacenado dentro del localStorage, registra al cliente automaticamente al sitio
+if (localStorage.getItem('usuario')){
     clientLocalStorage = JSON.parse(localStorage.getItem('usuario'));
     RegistroCliente(clientLocalStorage.nombre, clientLocalStorage.apellido, clientLocalStorage.correo, clientLocalStorage.contrasena, clientLocalStorage.pedido);
 }
@@ -73,4 +74,5 @@ function RegistroCliente(RC_name, RC_surname, RC_email, RC_password, RC_pedido){
 // Almaceno los datos de client en el localStorage
 function AlmacenoDatosLocal(){
     localStorage.setItem("usuario", JSON.stringify(client));
+}
 }
