@@ -10,7 +10,9 @@
 // Registro Usuario, o lo recupero mediante localStorage
 RegistroUsuario();
 
-// 
+// Actualizo icono carrito de navbar
 CambioEstadoCarrito();
+
+// Muestro productos en el Home del sitio
 var productosCatCamisetas = '';
 productosCatCamisetas = MuestroProductosHome();
